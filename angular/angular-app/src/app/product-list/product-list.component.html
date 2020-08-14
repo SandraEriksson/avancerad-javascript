@@ -1,0 +1,18 @@
+<h2>Böcker</h2>
+<div *ngFor="let book of bookList.BookList">
+  <h3>
+    <a [title]="book.productName + ' details'" [routerLink]="['/book', book.productName]">
+      {{ book.productName }}
+    </a>
+  </h3>
+
+  <p>
+    Författare: {{ book.authour }}
+    <br>
+    Kategori: {{ book.category }}
+  </p>
+
+  <button (click)="addToCart(book)">
+    Lägg till
+  </button>
+</div>

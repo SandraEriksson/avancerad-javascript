@@ -1,0 +1,24 @@
+<h1>Varukorg</h1>
+<div *ngFor="let book of cart">
+  <h3>
+    <a [title]="book.productName + ' details'" [routerLink]="['/book', book.productName]">
+      {{ book.productName }}
+    </a>
+  </h3>
+
+  <p>
+    Författare: {{ book.authour }}
+    <br>
+    Kategori: {{ book.category }}
+    <br>
+    Antal: {{ book.quantity }}
+  </p>
+
+  <button (click)="addToCart(book)">
+    Öka antal
+  </button>
+  <button (click)="removeFromCart(book)">
+    Minska antal
+  </button>
+</div>
+<h3>Antal varor i varukorgen: {{ cartCount }}</h3>
